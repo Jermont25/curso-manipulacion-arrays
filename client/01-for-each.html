@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <script>
+        const tasks = [
+          {
+            title: 'Sacar basura',
+            date: '21/08/2024',
+            completed: false,
+          },
+          {
+            title: 'Limpiar arena de los gatos',
+            date: '22/08/2024',
+            completed: true,
+          },
+          {
+            title: 'Traer lo del desayuno',
+            date: '21/08/2024',
+            completed: true,
+          },
+        ];
+
+        const app = document.getElementById('app');
+
+        tasks.forEach(({ title, completed }) => {
+          app.innerHTML += `<li><input type="checkbox" id=${title} name=${title} ${completed && 'checked'}>
+<label for="exampleCheckbox">${title}</label></li>`;
+        });
+      </script>
+    </div>
+  </body>
+</html>
