@@ -22,16 +22,23 @@
         {
           title: 'Traer lo del desayuno',
           date: '21/08/2024',
-          completed: true,
+          completed: false,
+        },
+        {
+          title: 'Hacer la cena',
+          date: '21/08/2024',
+          completed: false,
         },
       ];
 
       const app = document.getElementById('app');
 
-      tasks.forEach(({ title, completed }) => {
-        app.innerHTML += `<li><input type="checkbox" id=${title} name=${title} ${completed && 'checked'}>
+      const newTask = tasks.map(({ title, completed }) => {
+        return `<li><input type="checkbox" id=${title} name=${title} ${completed && 'checked'}>
 <label for="exampleCheckbox">${title}</label></li>`;
       });
+      console.log(newTask);
+      app.innerHTML = newTask.join('');
     </script>
   </body>
 </html>
