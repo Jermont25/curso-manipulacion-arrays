@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const tasks = [
+        {
+          title: 'Sacar basura',
+          date: '21/08/2024',
+          completed: false,
+        },
+        {
+          title: 'Limpiar arena de los gatos',
+          date: '22/08/2024',
+          completed: true,
+        },
+        {
+          title: 'Traer lo del desayuno',
+          date: '21/08/2024',
+          completed: false,
+        },
+        {
+          title: 'Hacer la cena',
+          date: '21/08/2024',
+          completed: false,
+        },
+      ];
+
+      const app = document.getElementById('app');
+
+      const newTask = tasks.map(({ title, completed }) => {
+        return `<li><input type="checkbox" id=${title} name=${title} ${completed && 'checked'}>
+<label for="exampleCheckbox">${title}</label></li>`;
+      });
+      console.log(newTask);
+      app.innerHTML = newTask.join('');
+    </script>
+  </body>
+</html>
